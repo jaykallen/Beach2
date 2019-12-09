@@ -3,7 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorRed">#FF4040</color>
     <color name="colorWilsonRedCan">#C71717</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorYellow">#fcf409</color>
@@ -28,4 +27,22 @@
     <color name="colorTeal">#42f4df</color>
     <color name="colorLightBlue">#e6f7ff</color>
     <color name="colorLightGrey">#ECEFF1</color>
+
+    <color name="colorOcean">#DDFFFF</color>
+    <color name="colorSand">#FFFFFC</color>
+    <color name="colorHigh">#BBFFBB</color>
+    <color name="colorNormal">#DDEEFF</color>
+    <color name="colorLow">#FFEEEE</color>
+    <color name="colorJunkanoo">#FFFFBB</color>
+    <color name="colorHot">#FFFFBB</color>
+    <color name="colorSunny">#DDFFFF</color>
+    <color name="colorMixed">#BBEEEE</color>
+    <color name="colorCloudy">#99CCCC</color>
+    <color name="colorRainy">#BBBBBB</color>
+    <color name="colorHurricane">#FFAAAA</color>
+    <color name="colorDarkWater">#229DD6</color>
+    <color name="colorBlue">#0088FF</color>
+    <color name="colorNavy">#000088</color>
+    <color name="colorRed">#FF0000</color>
+
 </resources>
