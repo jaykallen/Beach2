@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorOcean"
-    android:orientation="vertical">
+    android:background="@color/colorOcean">
 
     <include
         android:id="@+id/toolbar"
@@ -18,27 +17,30 @@
         android:gravity="center"
         android:text="January (High Season)"
         android:textColor="@color/colorNavy"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="16sp" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        app:layout_constraintTop_toBottomOf="@id/planText"
+        android:background="@color/colorBlack"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/colorBlack" />
+        app:layout_constraintTop_toBottomOf="@id/planText" />
 
     <TextView
+        android:id="@+id/balanceLabel"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
         android:text="Balance:"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
 
     <TextView
         android:id="@+id/balanceText"
@@ -47,45 +49,69 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="$ 0.00"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/balanceLabel"
+        app:layout_constraintTop_toBottomOf="@id/line" />
 
     <TextView
+        android:id="@+id/makeLabel"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="Brew Craft Barrels\n@ $100 / ea:"
-        android:textColor="@color/colorBlack" />
-
-    <EditText
-        android:id="@+id/craftEdit"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="0"
-        android:inputType="number"
         android:textColor="@color/colorBlack"
-        android:textStyle="bold" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balanceLabel" />
 
     <TextView
+        android:id="@+id/makeText"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/makeLabel"
+        app:layout_constraintTop_toBottomOf="@id/balanceLabel" />
+
+    <TextView
+        android:id="@+id/makeUnits"
         android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:text="barrels"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/makeText"
+        app:layout_constraintTop_toBottomOf="@id/balanceLabel" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="1"
+        android:progress="50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/makeLabel" />
 
 
     <TextView
+        android:id="@+id/costLabel"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="Cost + $600 Rent:"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar" />
 
     <TextView
         android:id="@+id/costText"
@@ -94,8 +120,11 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="$ 0.00"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@id/costLabel"
+        app:layout_constraintTop_toBottomOf="@id/seekBar" />
 
     <Button
         android:id="@+id/startButton"
@@ -104,12 +133,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/button_blue"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/button_blue"
         android:onClick="onStartClick"
         android:text="Start Mixing!"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
