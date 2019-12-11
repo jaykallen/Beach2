@@ -32,10 +32,11 @@
     <TextView
         android:id="@+id/balanceLabel"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="Balance:"
         android:textColor="@color/colorBlack"
         android:textSize="16dp"
@@ -45,10 +46,11 @@
     <TextView
         android:id="@+id/balanceText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="$ 0.00"
+        android:layout_marginTop="10dp"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -84,14 +86,14 @@
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:gravity="center"
         android:text="barrels"
         android:textColor="@color/colorBlack"
-        android:gravity="center"
         app:layout_constraintStart_toEndOf="@id/makeText"
         app:layout_constraintTop_toBottomOf="@id/balanceLabel" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/makeSeek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="10"
@@ -100,31 +102,144 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/makeLabel" />
 
+    <TextView
+        android:id="@+id/fruitLabel"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="Buy Fruits @ $3 / lb:"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/makeSeek" />
+
+    <TextView
+        android:id="@+id/fruitText"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/fruitLabel"
+        app:layout_constraintTop_toBottomOf="@id/makeSeek" />
+
+    <TextView
+        android:id="@+id/fruitUnits"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="lbs"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@id/fruitText"
+        app:layout_constraintTop_toBottomOf="@id/makeSeek" />
+
+    <SeekBar
+        android:id="@+id/fruitSeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="1"
+        android:progress="50"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fruitLabel" />
+
+    <TextView
+        android:id="@+id/adLabel"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="Number of Advertisements\n@ $50 / ea:"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fruitSeek" />
+
+    <TextView
+        android:id="@+id/adText"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/fruitLabel"
+        app:layout_constraintTop_toBottomOf="@id/fruitSeek" />
+
+    <SeekBar
+        android:id="@+id/adSeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="1"
+        android:progress="50"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adLabel" />
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="Set Price Per Drink:"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adSeek" />
+
+    <TextView
+        android:id="@+id/priceText"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="1.00"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/priceLabel"
+        app:layout_constraintTop_toBottomOf="@id/adSeek" />
+
+    <SeekBar
+        android:id="@+id/priceSeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="10"
+        android:progress="50"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceLabel" />
 
     <TextView
         android:id="@+id/costLabel"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Cost + $600 Rent:"
         android:textColor="@color/colorBlack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@id/priceSeek" />
 
     <TextView
         android:id="@+id/costText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="$ 0.00"
+        android:textColor="@color/colorBlack"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/colorBlack"
         app:layout_constraintStart_toEndOf="@id/costLabel"
-        app:layout_constraintTop_toBottomOf="@id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@id/priceSeek" />
 
     <Button
         android:id="@+id/startButton"

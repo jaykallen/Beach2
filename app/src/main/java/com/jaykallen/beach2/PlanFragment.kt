@@ -27,9 +27,34 @@ class PlanFragment : Fragment() {
     }
 
     private fun setupSeekBar() {
-        seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+        makeSeek.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 makeText.text = progress.toString()
+                calcTotal()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar) { }
+            override fun onStopTrackingTouch(seekBar: SeekBar) { }
+        })
+        fruitSeek.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                fruitText.text = progress.toString()
+                calcTotal()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar) { }
+            override fun onStopTrackingTouch(seekBar: SeekBar) { }
+        })
+        adSeek.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                adText.text = progress.toString()
+                calcTotal()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar) { }
+            override fun onStopTrackingTouch(seekBar: SeekBar) { }
+        })
+        priceSeek.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                priceText.text = progress.toString()
+                calcTotal()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
@@ -38,13 +63,20 @@ class PlanFragment : Fragment() {
     }
 
     private fun calcTotal() {
-        val barrels: Int = seekBar.progress
+        val barrels: Int = makeSeek.progress
+        val fruit: Int = fruitSeek.progress
+        val ads: Int = adSeek.progress
+        val price: Int = priceSeek.progress
+        costText.text = (barrels + fruit + ads + price + 600).toString()
+    }
 
+    private fun calcBalance() {
+        // todo figure out if costText is less than Balance.  If so then proceed, otherwise stop
     }
 
     private fun setupButtons(view: View) {
-        view.findViewById<Button>(com.jaykallen.beach2.R.id.startButton).setOnClickListener {
-            Navigation.findNavController(view).navigate(com.jaykallen.beach2.R.id.action_homeFragment_to_planFragment)
+        view.findViewById<Button>(R.id.startButton).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_planFragment)
         }
     }
 
