@@ -1,14 +1,13 @@
-package com.jaykallen.beach2
+package com.jaykallen.beach2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_plan.*
+import com.jaykallen.beach2.R
 
 // JK 2019-12-09: Attempt to use Room db in Sandbox environment to put into Manage Right later.
 

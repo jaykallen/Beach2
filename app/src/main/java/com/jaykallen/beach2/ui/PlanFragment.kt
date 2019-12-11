@@ -1,4 +1,4 @@
-package com.jaykallen.beach2
+package com.jaykallen.beach2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.jaykallen.beach2.R
 import kotlinx.android.synthetic.main.fragment_plan.*
 
 

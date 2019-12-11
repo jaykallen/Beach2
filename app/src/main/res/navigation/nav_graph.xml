@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.jaykallen.beach2.HomeFragment"
+        android:name="com.jaykallen.beach2.ui.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_planFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/planFragment"
-        android:name="com.jaykallen.beach2.PlanFragment"
+        android:name="com.jaykallen.beach2.ui.PlanFragment"
         android:label="PlanFragment" />
 </navigation>
