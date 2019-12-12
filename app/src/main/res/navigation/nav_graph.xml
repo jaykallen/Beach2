@@ -15,5 +15,49 @@
     <fragment
         android:id="@+id/planFragment"
         android:name="com.jaykallen.beach2.ui.PlanFragment"
-        android:label="PlanFragment" />
+        android:label="PlanFragment" >
+        <action
+            android:id="@+id/action_planFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.jaykallen.beach2.ui.ResultsFragment"
+        android:label="ResultsFragment" >
+        <action
+            android:id="@+id/action_resultsFragment_to_salesFragment"
+            app:destination="@id/salesFragment" />
+        <action
+            android:id="@+id/action_resultsFragment_to_popularityFragment"
+            app:destination="@id/popularityFragment" />
+        <action
+            android:id="@+id/action_resultsFragment_to_profitFragment"
+            app:destination="@id/profitFragment" />
+        <action
+            android:id="@+id/action_resultsFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_resultsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salesFragment"
+        android:name="com.jaykallen.beach2.ui.SalesFragment"
+        android:label="SalesFragment" />
+    <fragment
+        android:id="@+id/popularityFragment"
+        android:name="com.jaykallen.beach2.ui.PopularityFragment"
+        android:label="PopularityFragment" />
+    <fragment
+        android:id="@+id/profitFragment"
+        android:name="com.jaykallen.beach2.ui.ProfitFragment"
+        android:label="ProfitFragment" />
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.jaykallen.beach2.ui.WeatherFragment"
+        android:label="WeatherFragment" />
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.jaykallen.beach2.ui.GameFragment"
+        android:label="GameFragment" />
 </navigation>

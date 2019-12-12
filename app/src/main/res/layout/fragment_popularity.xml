@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorOcean">
+
+    <TextView
+        android:id="@+id/popularityLabel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorOcean"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:text="Popularity Detail Report"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorBlack" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:paddingEnd="32dp"
+            android:text="Signs Posted:" />
+
+        <TextView
+            android:id="@+id/signsText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorBlack"
+            android:gravity="center|left"
+            android:paddingStart="32dp"
+            android:text="10"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:paddingEnd="32dp"
+            android:text="Ad Expenses:" />
+
+        <TextView
+            android:id="@+id/expenseText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:textColor="@color/colorBlack"
+            android:paddingStart="32dp"
+            android:text="$ 5000.00"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:paddingEnd="32dp"
+            android:text="Popularity Ranking:" />
+
+        <TextView
+            android:id="@+id/popularityText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:textColor="@color/colorBlack"
+            android:paddingStart="32dp"
+            android:text="10/10"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:paddingEnd="32dp"
+            android:text="Passers by:" />
+
+        <TextView
+            android:id="@+id/passersText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:textColor="@color/colorBlack"
+            android:paddingStart="32dp"
+            android:text="1800"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="onBackClick"
+        android:background="@drawable/button_gray"
+        android:text="Back" />
+
+</LinearLayout>

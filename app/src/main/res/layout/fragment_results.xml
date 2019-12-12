@@ -1,0 +1,352 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorOcean"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/summaryText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorHigh"
+        android:gravity="center"
+        android:text="Summary for Month"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorBlack" />
+
+    <LinearLayout
+        android:id="@+id/weatherLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="Weather:" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp">
+
+            <ProgressBar
+                android:id="@+id/weatherProgress"
+                android:layout_width="100dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/weatherText"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Sunny"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/weatherImage"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/weatherButton"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_gray"
+            android:onClick="onWeatherClick"
+            android:text="Detail" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="Popularity:" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp">
+
+            <ProgressBar
+                android:id="@+id/popularityProgress"
+                android:layout_width="100dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/popularityText"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="10/10"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/popularityImage"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/popularityButton"
+            android:layout_width="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            android:background="@drawable/button_gray"
+            android:onClick="onPopularityClick"
+            android:text="Detail" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="Drinks Brewed:" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp">
+
+            <ProgressBar
+                android:id="@+id/brewProgress"
+                android:layout_width="100dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/brewText"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="1000"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/brewImage"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/brewButton"
+            android:layout_width="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            android:background="@drawable/button_gray"
+            android:onClick="onBrewClick"
+            android:text="Detail" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="Sales:" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp">
+
+            <ProgressBar
+                android:id="@+id/salesProgress"
+                android:layout_width="100dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/salesText"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="500"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/salesImage"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/salesButton"
+            android:layout_width="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            android:background="@drawable/button_gray"
+            android:onClick="onSalesClick"
+            android:text="Detail" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="Profit:" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="60dp">
+
+            <ProgressBar
+                android:id="@+id/profitProgress"
+                android:layout_width="100dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/profitText"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="500"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/profitImage"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/profitButton"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/button_gray"
+            android:onClick="onProfitClick"
+            android:text="Detail" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:paddingEnd="32dp"
+            android:text="Prior Balance:" />
+
+        <TextView
+            android:id="@+id/oldBalanceText"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:paddingStart="32dp"
+            android:text="$ 5000.00"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:paddingEnd="32dp"
+            android:text="New Balance:" />
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_weight="1">
+
+            <ProgressBar
+                android:id="@+id/balanceProgress"
+                android:layout_width="160dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/balanceText"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:paddingStart="32dp"
+                android:text="$ 10000.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/summaryImage"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_blue"
+        android:onClick="onPlanClick"
+        android:text="Plan for Next Month" />
+
+</LinearLayout>
