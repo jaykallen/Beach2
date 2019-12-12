@@ -1,6 +1,7 @@
-package com.jaykallen.beach2
+package com.jaykallen.beach2.helper
 
 import com.jaykallen.beach2.model.StatusModel
+import com.jaykallen.beach2.model.WeatherModel
 import timber.log.Timber
 import java.util.*
 
@@ -9,7 +10,7 @@ import java.util.*
  * Jan - Mar: High, Apr: Junkanoo, May - Jun: Normal, Jul - Oct: Hurricane, Nov - Dec: High
  */
 
-class Results {
+class Helper {
     companion object {
         private var overallFactor = 0F
 
@@ -29,6 +30,35 @@ class Results {
             setFruits()
         }
 
+        private fun setWeather() {
+            val tempArray = arrayOf(0, 76, 79, 80, 80, 81, 84, 86, 91, 87, 85, 82, 77)
+            var rand = Random().nextInt(6 - 1) + 1
+            WeatherModel.weather = when (rand) {
+                1 -> "Rainy"
+                2 -> "Cloudy"
+                3 -> "Sun & Cloud Mix"
+                4 -> "Sunny"
+                5 -> "Hot & Humid"
+                else -> "Hurricane!"
+            }
+            WeatherModel.temp = when (rand) {
+                1 -> tempArray[StatusModel.month] - 10
+                2 -> tempArray[StatusModel.month] - 5
+                3 -> tempArray[StatusModel.month]
+                4 -> tempArray[StatusModel.month] + 5
+                5 -> tempArray[StatusModel.month] + 10
+                else -> 70
+            }
+            if ((StatusModel.month == 8 || StatusModel.month == 9 || StatusModel.month == 10) && rand <3) {
+                WeatherModel.weather = "Hurricane!"
+                WeatherModel.temp = 50
+                WeatherModel.weatherFactor = 0.1F
+            } else {
+                WeatherModel.weatherFactor = WeatherModel.temp / 100F
+            }
+            Timber.d ("${WeatherModel.weather}, avg temp=${WeatherModel.temp}, Factor=${WeatherModel.weatherFactor}")
+        }
+
         fun setFruits() {
             val slices = StatusModel.fruits * 25
             val fruitString = when {
@@ -45,7 +75,9 @@ class Results {
         }
 
         private fun setSales() {
-            val sales = getPopulation(StatusModel.month) * overallFactor
+            val sales = getPopulation(
+                StatusModel.month
+            ) * overallFactor
             if (sales > StatusModel.numProd) {
                 StatusModel.sales = StatusModel.numProd
             } else {
@@ -53,9 +85,9 @@ class Results {
             }
             StatusModel.gross = StatusModel.sales * StatusModel.price
             StatusModel.profit = StatusModel.gross - StatusModel.expenses
-            StatusModel.balance = StatusModel.balanceOld + StatusModel.profit
+            StatusModel.balance = StatusModel.balance - StatusModel.expenses + StatusModel.profit
             Timber.d("sales=${StatusModel.sales} price=${StatusModel.price} gross=${StatusModel.gross} profit=${StatusModel.profit}")
-            Timber.d("old balance=${StatusModel.balanceOld} new balance=${StatusModel.balance}")
+            Timber.d("expenses=${StatusModel.expenses} new balance=${StatusModel.balance}")
         }
 
         private fun setExpenses() {
@@ -63,7 +95,7 @@ class Results {
         }
 
         private fun setPopularity() {
-            overallFactor = StatusModel.weatherFactor * StatusModel.priceFactor * StatusModel.adFactor
+            overallFactor = WeatherModel.weatherFactor * StatusModel.priceFactor * StatusModel.adFactor
             val pop = overallFactor * 10F
             Timber.d("Popularity=$pop")
             StatusModel.popularity = if (pop > 10) 10 else pop.toInt()
@@ -102,33 +134,5 @@ class Results {
             Timber.d ("Ad Factor=${StatusModel.adFactor}")
         }
 
-        private fun setWeather() {
-            val tempArray = arrayOf(0, 76, 79, 80, 80, 81, 84, 86, 91, 87, 85, 82, 77)
-            var rand = Random().nextInt(6 - 1) + 1
-            StatusModel.weather = when (rand) {
-                1 -> "Rainy"
-                2 -> "Cloudy"
-                3 -> "Sun & Cloud Mix"
-                4 -> "Sunny"
-                5 -> "Hot & Humid"
-                else -> "Hurricane!"
-            }
-            StatusModel.temp = when (rand) {
-                1 -> tempArray[StatusModel.month] - 10
-                2 -> tempArray[StatusModel.month] - 5
-                3 -> tempArray[StatusModel.month]
-                4 -> tempArray[StatusModel.month] + 5
-                5 -> tempArray[StatusModel.month] + 10
-                else -> 70
-            }
-            if ((StatusModel.month == 8 || StatusModel.month == 9 || StatusModel.month == 10) && rand <3) {
-                StatusModel.weather = "Hurricane!"
-                StatusModel.temp = 50
-                StatusModel.weatherFactor = 0.1F
-            } else {
-                StatusModel.weatherFactor = StatusModel.temp / 100F
-            }
-            Timber.d ("${StatusModel.weather}, avg temp=${StatusModel.temp}, Factor=${StatusModel.weatherFactor}")
-        }
     }
 }

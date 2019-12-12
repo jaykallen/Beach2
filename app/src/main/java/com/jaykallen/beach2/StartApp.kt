@@ -8,7 +8,13 @@ import timber.log.Timber
  */
 
 class StartApp: Application() {
+    companion object {
+        lateinit var instance: StartApp
+            private set
+    }
+
     override fun onCreate() {
+        instance = this
         super.onCreate()
         Timber.plant(object : Timber.DebugTree() {
             override fun log(priority: Int, tag: String?, message: String, t:Throwable?) {

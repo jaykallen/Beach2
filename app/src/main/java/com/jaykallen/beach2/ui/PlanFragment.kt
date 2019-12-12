@@ -10,6 +10,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.jaykallen.beach2.R
+import com.jaykallen.beach2.helper.Helper
 import kotlinx.android.synthetic.main.fragment_plan.*
 
 
@@ -77,7 +78,8 @@ class PlanFragment : Fragment() {
 
     private fun setupButtons(view: View) {
         view.findViewById<Button>(R.id.startButton).setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_planFragment)
+            Helper.setResults()
+            Navigation.findNavController(view).navigate(R.id.action_planFragment_to_resultsFragment)
         }
     }
 
